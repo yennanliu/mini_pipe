@@ -8,7 +8,7 @@ from script import *
 import time
 import sys
 
-#print (time)
+
 
 def run_etl(time):
 	with open("log/logfile.log", "a") as file:
@@ -31,6 +31,7 @@ def run_etl(time):
 
 
 if __name__ == '__main__':
+	
 	run_etl(sys.argv[1])
 	print ('\n')
 
