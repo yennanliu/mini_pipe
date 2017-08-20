@@ -16,10 +16,6 @@ def get_employer():
         data = dict(json.load(file))
     return data 
 
-def get_nationality():
-    with open('metadata/applicant_nationality.json') as file:
-        data = dict(json.load(file))
-    return data 
 
 def get_nationality():
     with open('metadata/applicant_nationality.json') as file:
