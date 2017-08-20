@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+# python 3 
+
+
 
 import json
 import datetime
@@ -58,11 +61,7 @@ def load(date):
             print(json.dumps(output))
  
 
-if __name__ == '__main__':
-    load('2017-07-26-06')
-            
 
-    
 
 
             
