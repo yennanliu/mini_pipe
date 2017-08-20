@@ -16,10 +16,10 @@ can be updated/modified flexibly
 ├── run.sh
 └── script.py
 
-script : utility, manipulate1 data 
-etl    : main etl 
-run    : shell that launch etl, can be put in crontab
-log    : log location
+script.py : utility, manipulate data 
+etl.py    : main etl 
+run.sh    : etl launch shell, can be put in crontab
+log       : log location
 
 ```
 
@@ -55,5 +55,13 @@ chmod +x run.sh
 ['2017-08-20 20:27:28.962561'] - INFO - Hour - 2017-07-26-06 elapsed time: 0.002224 s
 
 ```
+
+### sample log
+
+```
+['2017-08-20 20:37:07.597969'] - INFO - Hour - 2017-07-26-05 ETL start['2017-08-20 20:37:07.599393'] - INFO - Hour - 2017-07-26-05 elapsed time: 0.001418 s['2017-08-20 20:37:07.662458'] - INFO - Hour - 2017-07-26-06 ETL start['2017-08-20 20:37:07.664514'] - INFO - Hour - 2017-07-26-06 elapsed time: 0.002049 s
+
+``` 
+
 
 
