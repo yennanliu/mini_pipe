@@ -6,10 +6,11 @@
 from datetime import datetime
 from script import *
 import time
+import sys
 
 #print (time)
 
-def collect_log(time):
+def run_etl(time):
 	with open("log/logfile.log", "a") as file:
 		
 		# start 
@@ -17,7 +18,7 @@ def collect_log(time):
 		msg = '{} - INFO - Hour - {} ETL start'.format( [str(datetime.datetime.now())],time)
 		print (msg)
 		file.write(msg) 
-		# run tel 
+		# etl  
 		print ('-------------')
 		load(time)
 		print ('-------------')
@@ -29,22 +30,13 @@ def collect_log(time):
 		file.write(msg) 
 
 
-
-def run_etl(time):
-	pass
-
-
-
-
-"""
-
-[2017-07-27 13:51:37,446] - INFO - Hour 2017-07-26-05 ETL start.
-[2017-07-27 13:51:37,489] - INFO - Hour 2017-07-26-06 ETL start.
-[2017-07-27 13:51:47,218] - INFO - Hour 2017-07-26-06 ETL complete, elapsed time: 10s.
-[2017-07-27 13:51:48,491] - INFO - Hour 2017-07-26-05 ETL complete, elapsed time: 11s.
-"""
-
 if __name__ == '__main__':
-	#load('2017-07-26-06')
-	collect_log('2017-07-26-05')
-	#run_etl('2017-07-26-05')            
+	run_etl(sys.argv[1])
+	print ('\n')
+
+
+
+
+
+
+
