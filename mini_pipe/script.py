@@ -1,13 +1,10 @@
 # -*- coding: utf-8 -*-
 
-
-
-import pandas as pd
-import numpy as np
 import json
 import datetime
 import collections
-
+import  csv
+from collections import OrderedDict
 
 
 
@@ -27,17 +24,8 @@ def get_nationality():
     return data 
  
     
-
-with open('identity/2017-07-26-06.csv',"rt") as f:
-    reader = csv.reader(f, delimiter=',')
-    output=[]
-    for row in reader:
-        #print (row[1])
-        output.append(row[1])    
     
-    
-    
-def load_(date):
+def load(date):
     employer = get_employer()
     nationality = get_nationality()
     righttowork = 'right_to_work/{}.csv'.format(date)
@@ -61,8 +49,6 @@ def load_(date):
                     'is_verified']
             output = dict.fromkeys(keys,None)
             output=OrderedDict()
-            #output=OrderedDict()
-            #list(collections.OrderedDict.fromkeys(l).keys())
             output['iso8601_timestamp'] = value.strftime('%Y-%m-%d %H:%M:%S')
             output['applicant_id'] = k.split(",")[1]
             output['applicant_employer'] = employer[int(k.split(",")[2])]
@@ -72,7 +58,8 @@ def load_(date):
             print(json.dumps(output))
  
 
-
+if __name__ == '__main__':
+    load('2017-07-26-06')
             
 
     
